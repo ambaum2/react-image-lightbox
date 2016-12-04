@@ -1,4 +1,4 @@
-# React Image Lightbox
+# React Image Lightbox forked
 
 [![NPM](https://nodei.co/npm/react-image-lightbox.png)](https://npmjs.org/package/react-image-lightbox)
 
