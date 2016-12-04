@@ -974,7 +974,7 @@ class ReactImageLightbox extends Component {
                         key={imageSrc + keyEndings[srcType]}
                         alt={imageTitle || translate('Image')}
                     />
-                      <p>hello {imageSrc}</p>
+                      <p>hello2 {imageSrc}</p>
                   </div>
                 );
             }
