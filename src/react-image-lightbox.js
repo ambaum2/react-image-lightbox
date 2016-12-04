@@ -964,9 +964,9 @@ class ReactImageLightbox extends Component {
                 );
             } else {
                 images.push(
-                  <div>
+                  <div className={`${imageClass} ${styles.image}`}>
                     <img
-                        className={`${imageClass} ${styles.image}`}
+
                         onDoubleClick={this.handleImageDoubleClick}
                         onWheel={this.handleImageMouseWheel}
                         style={imageStyle}
@@ -974,7 +974,7 @@ class ReactImageLightbox extends Component {
                         key={imageSrc + keyEndings[srcType]}
                         alt={imageTitle || translate('Image')}
                     />
-                      <p>hello</p>
+                      <p>hello {imageSrc}</p>
                   </div>
                 );
             }
