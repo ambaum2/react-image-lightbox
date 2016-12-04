@@ -964,18 +964,27 @@ class ReactImageLightbox extends Component {
                 );
             } else {
                 images.push(
-                  <div className={`${imageClass} ${styles.image}`}>
-                    <img
-
-                        onDoubleClick={this.handleImageDoubleClick}
-                        onWheel={this.handleImageMouseWheel}
-                        style={imageStyle}
-                        src={imageSrc}
-                        key={imageSrc + keyEndings[srcType]}
-                        alt={imageTitle || translate('Image')}
-                    />
-                      <p>hello2 {imageSrc}</p>
-                  </div>
+                    <div className={`${imageClass} ${styles.image}`}>
+                        <img
+                            onDoubleClick={this.handleImageDoubleClick}
+                            onWheel={this.handleImageMouseWheel}
+                            style={imageStyle}
+                            src={imageSrc}
+                            key={imageSrc + keyEndings[srcType]}
+                            alt={imageTitle || translate('Image')}
+                            useMap="lightbox-map"
+                        />
+                        <p>hello2 {imageSrc}</p>
+                        <map name="lightbox-map">
+                            <area
+                                href="/"
+                                shape="poly"
+                                coords="17,51,42,35,66,51,66,89,17,89"
+                                alt="Beach hut"
+                                title="Beach hut - where you get changed"
+                            />
+                        </map>
+                    </div>
                 );
             }
         };

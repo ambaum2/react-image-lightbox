@@ -696,8 +696,17 @@
                                 style: imageStyle,
                                 src: imageSrc,
                                 key: imageSrc + keyEndings[srcType],
-                                alt: imageTitle || (0, _util.translate)("Image")
-                            }), _react2.default.createElement("p", null, "hello2 ", imageSrc)));
+                                alt: imageTitle || (0, _util.translate)("Image"),
+                                useMap: "lightbox-map"
+                            }), _react2.default.createElement("p", null, "hello2 ", imageSrc), _react2.default.createElement("map", {
+                                name: "lightbox-map"
+                            }, _react2.default.createElement("area", {
+                                href: "/",
+                                shape: "poly",
+                                coords: "17,51,42,35,66,51,66,89,17,89",
+                                alt: "Beach hut",
+                                title: "Beach hut - where you get changed"
+                            }))));
                         }
                     }, zoomMultiplier = this.getZoomMultiplier();
                     // Next Image (displayed on the right)
