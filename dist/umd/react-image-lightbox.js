@@ -688,15 +688,16 @@
                                 key: imageSrc + keyEndings[srcType]
                             }, _react2.default.createElement("div", {
                                 className: "download-blocker ril-download-blocker " + styles.downloadBlocker
-                            })))) : images.push(_react2.default.createElement("div", null, _react2.default.createElement("img", {
-                                className: imageClass + " " + styles.image,
+                            })))) : images.push(_react2.default.createElement("div", {
+                                className: imageClass + " " + styles.image
+                            }, _react2.default.createElement("img", {
                                 onDoubleClick: _this9.handleImageDoubleClick,
                                 onWheel: _this9.handleImageMouseWheel,
                                 style: imageStyle,
                                 src: imageSrc,
                                 key: imageSrc + keyEndings[srcType],
                                 alt: imageTitle || (0, _util.translate)("Image")
-                            }), _react2.default.createElement("p", null, "hello")));
+                            }), _react2.default.createElement("p", null, "hello2 ", imageSrc)));
                         }
                     }, zoomMultiplier = this.getZoomMultiplier();
                     // Next Image (displayed on the right)
