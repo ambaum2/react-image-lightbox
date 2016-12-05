@@ -702,15 +702,21 @@
                             }, _react2.default.createElement("area", {
                                 onClick: _this9.isAnimating() ? function() {} : _this9.requestMovePrev,
                                 shape: "rect",
-                                coords: "0," + (bestImageInfo.height - 200) + "," + bestImageInfo.width / 2 + "," + bestImageInfo.height,
+                                coords: "0," + (bestImageInfo.height - 250) + "," + bestImageInfo.width / 2 + "," + bestImageInfo.height,
                                 alt: "aao stats prev",
                                 title: "aao stats prev"
                             }), _react2.default.createElement("area", {
                                 onClick: _this9.isAnimating() ? function() {} : _this9.requestMoveNext,
                                 shape: "rect",
-                                coords: bestImageInfo.width / 2 + "," + (bestImageInfo.height - 200) + "," + bestImageInfo.width + "," + bestImageInfo.height,
+                                coords: bestImageInfo.width / 2 + "," + (bestImageInfo.height - 250) + "," + bestImageInfo.width + "," + bestImageInfo.height,
                                 alt: "aao stats next",
                                 title: "aao stats next"
+                            }), _react2.default.createElement("area", {
+                                onClick: _this9.isAnimating() ? function() {} : _this9.requestClose,
+                                shape: "rect",
+                                coords: bestImageInfo.width - 50 + ",0," + bestImageInfo.width + ",50",
+                                alt: "aao stats close",
+                                title: "aao stats close"
                             }))));
                         }
                     }, zoomMultiplier = this.getZoomMultiplier();
