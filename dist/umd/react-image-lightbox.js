@@ -688,8 +688,7 @@
                                 key: imageSrc + keyEndings[srcType]
                             }, _react2.default.createElement("div", {
                                 className: "download-blocker ril-download-blocker " + styles.downloadBlocker
-                            })))) : images.push(// <div className={`${imageClass} ${styles.image}`}>
-                            _react2.default.createElement("div", null, _react2.default.createElement("img", {
+                            })))) : images.push(_react2.default.createElement("div", null, _react2.default.createElement("img", {
                                 onDoubleClick: _this9.handleImageDoubleClick,
                                 onWheel: _this9.handleImageMouseWheel,
                                 style: imageStyle,
@@ -698,14 +697,20 @@
                                 alt: imageTitle || (0, _util.translate)("Image"),
                                 useMap: "#lightbox-map-" + srcType,
                                 className: imageClass + " " + styles.image
-                            }), _react2.default.createElement("p", null, "hello2 ", imageSrc), _react2.default.createElement("map", {
+                            }), _react2.default.createElement("map", {
                                 name: "lightbox-map-" + srcType
                             }, _react2.default.createElement("area", {
-                                href: "/",
+                                onClick: _this9.isAnimating() ? function() {} : _this9.requestMovePrev,
                                 shape: "rect",
-                                coords: "0, 0, 500, 500",
-                                alt: "aao stats",
-                                title: "aao stats"
+                                coords: "0, 450, 250, 550",
+                                alt: "aao stats prev",
+                                title: "aao stats prev"
+                            }), _react2.default.createElement("area", {
+                                onClick: _this9.isAnimating() ? function() {} : _this9.requestMoveNext,
+                                shape: "rect",
+                                coords: "250, 450, 550, 550",
+                                alt: "aao stats next",
+                                title: "aao stats next"
                             }))));
                         }
                     }, zoomMultiplier = this.getZoomMultiplier();

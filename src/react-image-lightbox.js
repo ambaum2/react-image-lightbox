@@ -964,7 +964,6 @@ class ReactImageLightbox extends Component {
                 );
             } else {
                 images.push(
-                  // <div className={`${imageClass} ${styles.image}`}>
                     <div>
                       <img
                         onDoubleClick={this.handleImageDoubleClick}
@@ -976,14 +975,20 @@ class ReactImageLightbox extends Component {
                         useMap={'#lightbox-map-'  + srcType}
                         className={`${imageClass} ${styles.image}`}
                       />
-                      <p>hello2 {imageSrc}</p>
                       <map name={'lightbox-map-' + srcType}>
                           <area
-                            href="/"
+                            onClick={!this.isAnimating() ? this.requestMovePrev : () => {}}
                             shape="rect"
-                            coords="0, 0, 500, 500"
-                            alt="aao stats"
-                            title="aao stats"
+                            coords="0, 450, 250, 550"
+                            alt="aao stats prev"
+                            title="aao stats prev"
+                          />
+                          <area
+                            onClick={!this.isAnimating() ? this.requestMoveNext : () => {}}
+                            shape="rect"
+                            coords="250, 450, 550, 550"
+                            alt="aao stats next"
+                            title="aao stats next"
                           />
                       </map>
                     </div>
