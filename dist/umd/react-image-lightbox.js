@@ -688,16 +688,16 @@
                                 key: imageSrc + keyEndings[srcType]
                             }, _react2.default.createElement("div", {
                                 className: "download-blocker ril-download-blocker " + styles.downloadBlocker
-                            })))) : images.push(_react2.default.createElement("div", {
-                                className: imageClass + " " + styles.image
-                            }, _react2.default.createElement("img", {
+                            })))) : images.push(// <div className={`${imageClass} ${styles.image}`}>
+                            _react2.default.createElement("div", null, _react2.default.createElement("img", {
                                 onDoubleClick: _this9.handleImageDoubleClick,
                                 onWheel: _this9.handleImageMouseWheel,
                                 style: imageStyle,
                                 src: imageSrc,
                                 key: imageSrc + keyEndings[srcType],
                                 alt: imageTitle || (0, _util.translate)("Image"),
-                                useMap: "#lightbox-map-" + srcType
+                                useMap: "#lightbox-map-" + srcType,
+                                className: imageClass + " " + styles.image
                             }), _react2.default.createElement("p", null, "hello2 ", imageSrc), _react2.default.createElement("map", {
                                 name: "lightbox-map-" + srcType
                             }, _react2.default.createElement("area", {
@@ -783,8 +783,8 @@
                         onKeyUp: this.handleKeyInput
                     }, _react2.default.createElement("div", {
                         // eslint-disable-line jsx-a11y/no-static-element-interactions
-                        // Image holder //inner
-                        className: "ril-inner " + styles.inner,
+                        // Image holder
+                        className: "inner ril-inner " + styles.inner,
                         onClick: clickOutsideToClose ? this.closeIfClickInner : noop
                     }, images), prevSrc && _react2.default.createElement("button", {
                         // Move to previous image button

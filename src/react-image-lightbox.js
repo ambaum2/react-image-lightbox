@@ -964,26 +964,28 @@ class ReactImageLightbox extends Component {
                 );
             } else {
                 images.push(
-                    <div className={`${imageClass} ${styles.image}`}>
-                        <img
-                            onDoubleClick={this.handleImageDoubleClick}
-                            onWheel={this.handleImageMouseWheel}
-                            style={imageStyle}
-                            src={imageSrc}
-                            key={imageSrc + keyEndings[srcType]}
-                            alt={imageTitle || translate('Image')}
-                            useMap={'#lightbox-map-'  + srcType}
-                        />
-                        <p>hello2 {imageSrc}</p>
-                        <map name={'lightbox-map-' + srcType}>
-                            <area
-                                href="/"
-                                shape="rect"
-                                coords="0, 0, 500, 500"
-                                alt="aao stats"
-                                title="aao stats"
-                            />
-                        </map>
+                  // <div className={`${imageClass} ${styles.image}`}>
+                    <div>
+                      <img
+                        onDoubleClick={this.handleImageDoubleClick}
+                        onWheel={this.handleImageMouseWheel}
+                        style={imageStyle}
+                        src={imageSrc}
+                        key={imageSrc + keyEndings[srcType]}
+                        alt={imageTitle || translate('Image')}
+                        useMap={'#lightbox-map-'  + srcType}
+                        className={`${imageClass} ${styles.image}`}
+                      />
+                      <p>hello2 {imageSrc}</p>
+                      <map name={'lightbox-map-' + srcType}>
+                          <area
+                            href="/"
+                            shape="rect"
+                            coords="0, 0, 500, 500"
+                            alt="aao stats"
+                            title="aao stats"
+                          />
+                      </map>
                     </div>
                 );
             }
@@ -1097,8 +1099,8 @@ class ReactImageLightbox extends Component {
                 >
 
                     <div // eslint-disable-line jsx-a11y/no-static-element-interactions
-                        // Image holder //inner
-                        className={`ril-inner ${styles.inner}`}
+                        // Image holder
+                        className={`inner ril-inner ${styles.inner}`}
                         onClick={clickOutsideToClose ? this.closeIfClickInner : noop}
                     >
                         {images}
