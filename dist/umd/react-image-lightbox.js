@@ -702,13 +702,13 @@
                             }, _react2.default.createElement("area", {
                                 onClick: _this9.isAnimating() ? function() {} : _this9.requestMovePrev,
                                 shape: "rect",
-                                coords: "0, 450, 250, 550",
+                                coords: "0," + (bestImageInfo.height - 200) + "," + bestImageInfo.width / 2 + "," + bestImageInfo.height,
                                 alt: "aao stats prev",
                                 title: "aao stats prev"
                             }), _react2.default.createElement("area", {
                                 onClick: _this9.isAnimating() ? function() {} : _this9.requestMoveNext,
                                 shape: "rect",
-                                coords: "250, 450, 550, 550",
+                                coords: bestImageInfo.width / 2 + "," + (bestImageInfo.height - 200) + "," + bestImageInfo.width + "," + bestImageInfo.height,
                                 alt: "aao stats next",
                                 title: "aao stats next"
                             }))));

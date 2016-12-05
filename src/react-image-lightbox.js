@@ -979,14 +979,15 @@ class ReactImageLightbox extends Component {
                           <area
                             onClick={!this.isAnimating() ? this.requestMovePrev : () => {}}
                             shape="rect"
-                            coords="0, 450, 250, 550"
+                            coords={'0,' + (bestImageInfo.height - 200) + ',' + (bestImageInfo.width / 2) + ',' + bestImageInfo.height}
                             alt="aao stats prev"
                             title="aao stats prev"
                           />
                           <area
                             onClick={!this.isAnimating() ? this.requestMoveNext : () => {}}
                             shape="rect"
-                            coords="250, 450, 550, 550"
+                            coords={(bestImageInfo.width / 2) + ',' + (bestImageInfo.height - 200) + ','
+                              + bestImageInfo.width + ',' + bestImageInfo.height}
                             alt="aao stats next"
                             title="aao stats next"
                           />
