@@ -697,15 +697,15 @@
                                 src: imageSrc,
                                 key: imageSrc + keyEndings[srcType],
                                 alt: imageTitle || (0, _util.translate)("Image"),
-                                useMap: "lightbox-map"
+                                useMap: "#lightbox-map-" + srcType
                             }), _react2.default.createElement("p", null, "hello2 ", imageSrc), _react2.default.createElement("map", {
-                                name: "lightbox-map"
+                                name: "lightbox-map-" + srcType
                             }, _react2.default.createElement("area", {
                                 href: "/",
-                                shape: "poly",
-                                coords: "17,51,42,35,66,51,66,89,17,89",
-                                alt: "Beach hut",
-                                title: "Beach hut - where you get changed"
+                                shape: "rect",
+                                coords: "0, 0, 500, 500",
+                                alt: "aao stats",
+                                title: "aao stats"
                             }))));
                         }
                     }, zoomMultiplier = this.getZoomMultiplier();
@@ -783,8 +783,8 @@
                         onKeyUp: this.handleKeyInput
                     }, _react2.default.createElement("div", {
                         // eslint-disable-line jsx-a11y/no-static-element-interactions
-                        // Image holder
-                        className: "inner ril-inner " + styles.inner,
+                        // Image holder //inner
+                        className: "ril-inner " + styles.inner,
                         onClick: clickOutsideToClose ? this.closeIfClickInner : noop
                     }, images), prevSrc && _react2.default.createElement("button", {
                         // Move to previous image button

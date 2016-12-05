@@ -972,16 +972,16 @@ class ReactImageLightbox extends Component {
                             src={imageSrc}
                             key={imageSrc + keyEndings[srcType]}
                             alt={imageTitle || translate('Image')}
-                            useMap="lightbox-map"
+                            useMap={'#lightbox-map-'  + srcType}
                         />
                         <p>hello2 {imageSrc}</p>
-                        <map name="lightbox-map">
+                        <map name={'lightbox-map-' + srcType}>
                             <area
                                 href="/"
-                                shape="poly"
-                                coords="17,51,42,35,66,51,66,89,17,89"
-                                alt="Beach hut"
-                                title="Beach hut - where you get changed"
+                                shape="rect"
+                                coords="0, 0, 500, 500"
+                                alt="aao stats"
+                                title="aao stats"
                             />
                         </map>
                     </div>
@@ -1097,8 +1097,8 @@ class ReactImageLightbox extends Component {
                 >
 
                     <div // eslint-disable-line jsx-a11y/no-static-element-interactions
-                        // Image holder
-                        className={`inner ril-inner ${styles.inner}`}
+                        // Image holder //inner
+                        className={`ril-inner ${styles.inner}`}
                         onClick={clickOutsideToClose ? this.closeIfClickInner : noop}
                     >
                         {images}
