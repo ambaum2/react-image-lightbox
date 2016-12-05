@@ -863,6 +863,7 @@ class ReactImageLightbox extends Component {
             prevSrc,
             toolbarButtons,
             reactModalStyle,
+            showPrevNextButtons
         } = this.props;
         const {
             zoomLevel,
@@ -1119,24 +1120,25 @@ class ReactImageLightbox extends Component {
                     >
                         {images}
                     </div>
+                    {showPrevNextButtons} ? (
+                      {prevSrc &&
+                      <button // Move to previous image button
+                        type="button"
+                        className={`prev-button ril-prev-button ${styles.navButtons} ${styles.navButtonPrev}`}
+                        key="prev"
+                        onClick={!this.isAnimating() ? this.requestMovePrev : noop} // Ignore clicks during animation
+                      />
+                      }
 
-                    {prevSrc &&
-                        <button // Move to previous image button
-                            type="button"
-                            className={`prev-button ril-prev-button ${styles.navButtons} ${styles.navButtonPrev}`}
-                            key="prev"
-                            onClick={!this.isAnimating() ? this.requestMovePrev : noop} // Ignore clicks during animation
-                        />
-                    }
-
-                    {nextSrc &&
-                        <button // Move to next image button
-                            type="button"
-                            className={`next-button ril-next-button ${styles.navButtons} ${styles.navButtonNext}`}
-                            key="next"
-                            onClick={!this.isAnimating() ? this.requestMoveNext : noop} // Ignore clicks during animation
-                        />
-                    }
+                      {nextSrc &&
+                      <button // Move to next image button
+                        type="button"
+                        className={`next-button ril-next-button ${styles.navButtons} ${styles.navButtonNext}`}
+                        key="next"
+                        onClick={!this.isAnimating() ? this.requestMoveNext : noop} // Ignore clicks during animation
+                      />
+                      }
+                    )
 
                     <div // Lightbox toolbar
                         className={`toolbar ril-toolbar ${styles.toolbar}`}
@@ -1210,8 +1212,6 @@ class ReactImageLightbox extends Component {
                             </div>
                         </div>
                     }
-                    <p>caption!!</p>
-
                 </div>
             </Modal>
         );
@@ -1333,6 +1333,8 @@ ReactImageLightbox.propTypes = {
 
     // Set to false to disable zoom functionality and hide zoom buttons
     enableZoom: PropTypes.bool,
+
+    showPrevNextButtons: PropTypes.bool
 };
 
 ReactImageLightbox.defaultProps = {
@@ -1353,6 +1355,7 @@ ReactImageLightbox.defaultProps = {
     imagePadding:        10,
     clickOutsideToClose: true,
     enableZoom:          true,
+    showPrevNextButtons: false
 };
 
 export default ReactImageLightbox;
