@@ -688,7 +688,9 @@
                                 key: imageSrc + keyEndings[srcType]
                             }, _react2.default.createElement("div", {
                                 className: "download-blocker ril-download-blocker " + styles.downloadBlocker
-                            })))) : images.push(_react2.default.createElement("div", null, _react2.default.createElement("img", {
+                            })))) : images.push(_react2.default.createElement("div", {
+                                key: "img-container-" + imageSrc + keyEndings[srcType]
+                            }, _react2.default.createElement("img", {
                                 onDoubleClick: _this9.handleImageDoubleClick,
                                 onWheel: _this9.handleImageMouseWheel,
                                 style: imageStyle,
@@ -702,7 +704,7 @@
                             }, _react2.default.createElement("area", {
                                 onClick: _this9.isAnimating() ? function() {} : _this9.requestMovePrev,
                                 shape: "rect",
-                                coords: "0," + (bestImageInfo.height - 175) + "," + bestImageInfo.width / 2 + "," + bestImageInfo.height,
+                                coords: "0," + (bestImageInfo.height - 150) + "," + bestImageInfo.width / 2 + "," + bestImageInfo.height,
                                 alt: "aao stats prev",
                                 title: "aao stats prev"
                             }), _react2.default.createElement("area", {
@@ -861,7 +863,7 @@
                         }
                     }, _react2.default.createElement("div", {
                         className: "ril-caption-content " + styles.captionContent
-                    }, this.props.imageCaption))));
+                    }, this.props.imageCaption)), _react2.default.createElement("p", null, "caption!!")));
                 }
             } ], [ {
                 key: "getTransform",

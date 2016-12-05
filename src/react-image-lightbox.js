@@ -964,7 +964,7 @@ class ReactImageLightbox extends Component {
                 );
             } else {
                 images.push(
-                    <div>
+                    <div key={'img-container-' + imageSrc + keyEndings[srcType]}>
                       <img
                         onDoubleClick={this.handleImageDoubleClick}
                         onWheel={this.handleImageMouseWheel}
@@ -979,7 +979,7 @@ class ReactImageLightbox extends Component {
                           <area
                             onClick={!this.isAnimating() ? this.requestMovePrev : () => {}}
                             shape="rect"
-                            coords={'0,' + (bestImageInfo.height - 175) + ',' + (bestImageInfo.width / 2) + ',' + bestImageInfo.height}
+                            coords={'0,' + (bestImageInfo.height - 150) + ',' + (bestImageInfo.width / 2) + ',' + bestImageInfo.height}
                             alt="aao stats prev"
                             title="aao stats prev"
                           />
@@ -1210,6 +1210,7 @@ class ReactImageLightbox extends Component {
                             </div>
                         </div>
                     }
+                    <p>caption!!</p>
 
                 </div>
             </Modal>
