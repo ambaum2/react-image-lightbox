@@ -1138,7 +1138,7 @@ class ReactImageLightbox extends Component {
                         onClick={!this.isAnimating() ? this.requestMoveNext : noop} // Ignore clicks during animation
                       />
                       }
-                    )
+                    ) : {null}
 
                     <div // Lightbox toolbar
                         className={`toolbar ril-toolbar ${styles.toolbar}`}

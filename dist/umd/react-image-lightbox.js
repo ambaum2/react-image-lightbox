@@ -620,7 +620,7 @@
             }, {
                 key: "render",
                 value: function() {
-                    var _this9 = this, _props = this.props, animationDisabled = _props.animationDisabled, animationDuration = _props.animationDuration, clickOutsideToClose = _props.clickOutsideToClose, discourageDownloads = _props.discourageDownloads, enableZoom = _props.enableZoom, imageTitle = _props.imageTitle, nextSrc = _props.nextSrc, prevSrc = _props.prevSrc, toolbarButtons = _props.toolbarButtons, reactModalStyle = _props.reactModalStyle, _state = this.state, zoomLevel = _state.zoomLevel, offsetX = _state.offsetX, offsetY = _state.offsetY, isClosing = _state.isClosing, boxSize = this.getLightboxRect(), transitionStyle = {};
+                    var _this9 = this, _props = this.props, animationDisabled = _props.animationDisabled, animationDuration = _props.animationDuration, clickOutsideToClose = _props.clickOutsideToClose, discourageDownloads = _props.discourageDownloads, enableZoom = _props.enableZoom, imageTitle = _props.imageTitle, nextSrc = _props.nextSrc, prevSrc = _props.prevSrc, toolbarButtons = _props.toolbarButtons, reactModalStyle = _props.reactModalStyle, showPrevNextButtons = _props.showPrevNextButtons, _state = this.state, zoomLevel = _state.zoomLevel, offsetX = _state.offsetX, offsetY = _state.offsetY, isClosing = _state.isClosing, boxSize = this.getLightboxRect(), transitionStyle = {};
                     // Transition settings for sliding animations
                     !animationDisabled && this.isAnimating() && (transitionStyle = _extends({}, transitionStyle, {
                         transition: "transform " + animationDuration + "ms"
@@ -799,7 +799,7 @@
                         // Image holder
                         className: "inner ril-inner " + styles.inner,
                         onClick: clickOutsideToClose ? this.closeIfClickInner : noop
-                    }, images), prevSrc && _react2.default.createElement("button", {
+                    }, images), showPrevNextButtons, " ? (", prevSrc && _react2.default.createElement("button", {
                         // Move to previous image button
                         type: "button",
                         className: "prev-button ril-prev-button " + styles.navButtons + " " + styles.navButtonPrev,
@@ -811,7 +811,7 @@
                         className: "next-button ril-next-button " + styles.navButtons + " " + styles.navButtonNext,
                         key: "next",
                         onClick: this.isAnimating() ? noop : this.requestMoveNext
-                    }), _react2.default.createElement("div", {
+                    }), ") : ", null, _react2.default.createElement("div", {
                         // Lightbox toolbar
                         className: "toolbar ril-toolbar " + styles.toolbar
                     }, _react2.default.createElement("ul", {
@@ -863,7 +863,7 @@
                         }
                     }, _react2.default.createElement("div", {
                         className: "ril-caption-content " + styles.captionContent
-                    }, this.props.imageCaption)), _react2.default.createElement("p", null, "caption!!")));
+                    }, this.props.imageCaption))));
                 }
             } ], [ {
                 key: "getTransform",
@@ -962,7 +962,8 @@
             // When true, clicks outside of the image close the lightbox
             clickOutsideToClose: _react.PropTypes.bool,
             // Set to false to disable zoom functionality and hide zoom buttons
-            enableZoom: _react.PropTypes.bool
+            enableZoom: _react.PropTypes.bool,
+            showPrevNextButtons: _react.PropTypes.bool
         }, ReactImageLightbox.defaultProps = {
             onMovePrevRequest: function() {},
             onMoveNextRequest: function() {},
@@ -976,7 +977,8 @@
             reactModalStyle: {},
             imagePadding: 10,
             clickOutsideToClose: !0,
-            enableZoom: !0
+            enableZoom: !0,
+            showPrevNextButtons: !1
         }, exports.default = ReactImageLightbox;
     }, /* 3 */
     /***/
