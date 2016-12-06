@@ -1120,6 +1120,7 @@ class ReactImageLightbox extends Component {
                     >
                         {images}
                     </div>
+                    {showPrevNextButtons} ? ({<p>show buttons</p>}) : ({<p>don't show </p>})
                     {showPrevNextButtons} ? (
                       {prevSrc &&
                       <button // Move to previous image button
