@@ -15,21 +15,21 @@ module.exports = {
     resolve: {
         extensions: ['', '.js']
     },
-    devtool: 'source-map',
-    plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.EnvironmentPlugin([
-            "NODE_ENV",
-        ]),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            mangle: false,
-            beautify: true,
-            comments: true,
-        })
-    ],
+    //devtool: 'source-map',
+    // plugins: [
+    //     new webpack.optimize.OccurenceOrderPlugin(),
+    //     new webpack.EnvironmentPlugin([
+    //         "NODE_ENV",
+    //     ]),
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //             warnings: false
+    //         },
+    //         mangle: false,
+    //         beautify: true,
+    //         comments: true,
+    //     })
+    // ],
     postcss: [
         autoprefixer({ browsers: ['IE >= 9', '> 1%'] }),
     ],
