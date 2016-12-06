@@ -1091,6 +1091,7 @@ class ReactImageLightbox extends Component {
                 onRequestClose={clickOutsideToClose ? this.requestClose : noop}
                 onAfterOpen={() => this.outerEl && this.outerEl.focus()} // Focus on the div with key handlers
                 style={modalStyle}
+                contentLabel="aria-label"
             >
                 <div // eslint-disable-line jsx-a11y/no-static-element-interactions
                     // Floating modal with closing animations

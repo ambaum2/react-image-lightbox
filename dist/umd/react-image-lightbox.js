@@ -773,7 +773,8 @@
                         onAfterOpen: function() {
                             return _this9.outerEl && _this9.outerEl.focus();
                         },
-                        style: modalStyle
+                        style: modalStyle,
+                        contentLabel: "aria-label"
                     }, _react2.default.createElement("div", {
                         // eslint-disable-line jsx-a11y/no-static-element-interactions
                         // Floating modal with closing animations

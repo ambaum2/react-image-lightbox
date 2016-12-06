@@ -28,7 +28,7 @@ module.exports = {
             mangle: false,
             beautify: true,
             comments: true,
-        }),
+        })
     ],
     postcss: [
         autoprefixer({ browsers: ['IE >= 9', '> 1%'] }),
