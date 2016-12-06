@@ -799,19 +799,19 @@
                         // Image holder
                         className: "inner ril-inner " + styles.inner,
                         onClick: clickOutsideToClose ? this.closeIfClickInner : noop
-                    }, images), showPrevNextButtons, " ? (", prevSrc && _react2.default.createElement("button", {
+                    }, images), prevSrc && showPrevNextButtons && _react2.default.createElement("button", {
                         // Move to previous image button
                         type: "button",
                         className: "prev-button ril-prev-button " + styles.navButtons + " " + styles.navButtonPrev,
                         key: "prev",
                         onClick: this.isAnimating() ? noop : this.requestMovePrev
-                    }), nextSrc && _react2.default.createElement("button", {
+                    }), nextSrc && showPrevNextButtons && _react2.default.createElement("button", {
                         // Move to next image button
                         type: "button",
                         className: "next-button ril-next-button " + styles.navButtons + " " + styles.navButtonNext,
                         key: "next",
                         onClick: this.isAnimating() ? noop : this.requestMoveNext
-                    }), ") : ", null, _react2.default.createElement("div", {
+                    }), _react2.default.createElement("div", {
                         // Lightbox toolbar
                         className: "toolbar ril-toolbar " + styles.toolbar
                     }, _react2.default.createElement("ul", {
